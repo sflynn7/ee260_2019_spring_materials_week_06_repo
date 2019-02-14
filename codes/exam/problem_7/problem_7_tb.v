@@ -11,6 +11,10 @@ module problem_7_tb();
   reg [20*8-1:0] str;
 
   initial begin
+    if ($value$plusargs("DUMPFILE=%s", str)) begin
+      $dumpfile(str);
+      $dumpvars(0, UUT);
+    end
 
     for (ii=0; ii<8; ii=ii+1) begin
       {a, b, c} = ii; #10;
