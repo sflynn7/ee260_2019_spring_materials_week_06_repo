@@ -5,6 +5,6 @@ module problem_7(a, b, c, F);
   output reg F;
 
   always @ (a, b, c) begin
-    F = ~ a * ~ b * c + a * b * ~ c + a * b * c;
+    F = ( ~ a & ~ b & c ) | ( a & b & ~ c ) | ( a & b & c );
   end
 endmodule
